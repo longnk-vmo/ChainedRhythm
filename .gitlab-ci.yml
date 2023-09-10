@@ -1,0 +1,28 @@
+stages:
+  - reload
+  - test
+
+reload-dev:
+  stage: reload
+  script:
+    - export PATH="$PATH:/root/.nvm/versions/node/v18.16.0/bin"
+    - cd /opt/app
+    - if [[ "$(pgrep -f /opt/app/node_modules)" ]]; then pm2 delete app; fi
+    - git reset --hard
+    - git pull
+    - export NODE_ENV=production
+    - export NODE_OPTIONS=--max_old_space_size=4096
+    - pnpm install
+    - pnpm build
+    - cd /opt/app/apps/web
+    - pm2 start "npm start" --name="app"
+  only:
+    - dev
+  tags:
+    - du11-fe-dux-ecosystem
+
+include:
+- template: Security/Secret-Detection.gitlab-ci.yml
+secret_detection:
+  tags:
+    - vmogroup
