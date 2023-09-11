@@ -45,7 +45,7 @@ const config: (
 ) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
   [
     {
-      label: t('NFT'),
+      label: t('Chained Rhythm NFT'),
       href: `${nftsBaseUrl}`,
       icon: NftIcon,
       fillIcon: NftFillIcon,
@@ -66,69 +66,6 @@ const config: (
         },
       ],
     },
-    // {
-    //   label: t('Game'),
-    //   icon: PancakeProtectorIcon,
-    //   hideSubNav: true,
-    //   items: [
-    //     {
-    //       label: t('Pancake Protectors'),
-    //       href: 'https://protectors.pancakeswap.finance',
-    //       type: DropdownMenuItemType.EXTERNAL_LINK,
-    //       status: { text: t('New'), color: 'success' },
-    //     },
-    //   ],
-    // },
-    // {
-    //   label: '',
-    //   href: '/info',
-    //   icon: MoreIcon,
-    //   hideSubNav: true,
-    //   items: [
-    //     {
-    //       label: t('Info'),
-    //       href: '/info/v3',
-    //     },
-    //     {
-    //       label: t('IFO'),
-    //       href: '/ifo',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
-    //       image: '/images/ifos/ifo-bunny.png',
-    //     },
-    //     {
-    //       label: t('Affiliate Program'),
-    //       href: '/affiliates-program',
-    //     },
-    //     {
-    //       label: t('Voting'),
-    //       href: '/voting',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
-    //       image: '/images/voting/voting-bunny.png',
-    //     },
-    //     {
-    //       type: DropdownMenuItemType.DIVIDER,
-    //     },
-    //     {
-    //       label: t('Leaderboard'),
-    //       href: '/teams',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
-    //       image: '/images/decorations/leaderboard.png',
-    //     },
-    //     {
-    //       type: DropdownMenuItemType.DIVIDER,
-    //     },
-    //     {
-    //       label: t('Blog'),
-    //       href: 'https://blog.pancakeswap.finance',
-    //       type: DropdownMenuItemType.EXTERNAL_LINK,
-    //     },
-    //     {
-    //       label: t('Docs'),
-    //       href: 'https://docs.pancakeswap.finance',
-    //       type: DropdownMenuItemType.EXTERNAL_LINK,
-    //     },
-    //   ].map((item) => addMenuItemSupported(item, chainId)),
-    // },
   ].map((item) => addMenuItemSupported(item, chainId))
 
 export default config

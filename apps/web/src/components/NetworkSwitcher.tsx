@@ -163,8 +163,7 @@ export const NetworkSwitcher = () => {
         mr="8px"
         placement="bottom"
         variant={isLoading ? 'pending' : isWrongNetwork ? 'danger' : 'default'}
-        avatarSrc={`${ASSET_CDN}/web/chains/${chainId}.png`}
-        disabled={cannotChangeNetwork}
+        disabled
         text={
           isLoading ? (
             t('Requesting')
@@ -172,22 +171,14 @@ export const NetworkSwitcher = () => {
             t('Network')
           ) : foundChain ? (
             <>
-              <Box display={['none', null, null, null, null, 'block']}>{foundChain.name}</Box>
+              <Box display={['none', null, null, null, null, 'block']}>Klaytn Wallet</Box>
               <Box display={['block', null, null, null, null, 'none']}>{symbol}</Box>
             </>
           ) : (
             t('Select a Network')
           )
         }
-      >
-        {() =>
-          isNotMatched ? (
-            <WrongNetworkSelect switchNetwork={switchNetworkAsync} chainId={chainId} />
-          ) : (
-            <NetworkSelect switchNetwork={switchNetworkAsync} chainId={chainId} />
-          )
-        }
-      </UserMenu>
+      />
     </Box>
   )
 }

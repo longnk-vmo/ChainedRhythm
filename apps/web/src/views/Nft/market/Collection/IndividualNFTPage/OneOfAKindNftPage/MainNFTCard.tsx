@@ -68,19 +68,17 @@ const MainNFTCard: React.FC<React.PropsWithChildren<MainNFTCardProps>> = ({
         <Container flexDirection={['column-reverse', null, 'row']}>
           <Flex flex="2">
             <Box>
-              <CollectionLink to={`${nftsBaseUrl}/collections/${nft.collectionAddress}`}>
-                {nft?.collectionName}
-              </CollectionLink>
               <Text fontSize="40px" bold mt="12px">
-                {nft.name}
+                Chained Rhythm
               </Text>
-              {nft.description && <Text mt={['16px', '16px', '48px']}>{t(nft.description)}</Text>}
+              {nft.description && (
+                <Text mt={['16px', '16px', '48px']}>{t(nft.description.replace('PancakeSwap', 'Chained Rhythm'))}</Text>
+              )}
               <Text color="textSubtle" mt={['16px', '16px', '48px']}>
                 {t('Price')}
               </Text>
               {currentAskPriceAsNumber > 0 ? (
                 <Flex alignItems="center" mt="8px">
-                  {/* <BinanceIcon width={18} height={18} mr="4px" /> */}
                   <img src="/images/coin.png" width="16px" alt="icon" style={{ marginLeft: 4, marginRight: 4 }} />
                   <Text fontSize="24px" bold mr="4px">
                     {formatNumber(currentAskPriceAsNumber, 0, 5)}

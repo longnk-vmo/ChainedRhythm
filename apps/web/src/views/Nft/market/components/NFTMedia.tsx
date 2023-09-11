@@ -61,16 +61,7 @@ const NFTMedia: React.FC<
     )
   }
 
-  return (
-    <RoundedImage
-      width={width}
-      height={height}
-      src={nft?.image.gif || nft?.image.thumbnail}
-      alt={nft?.name}
-      as={as}
-      {...props}
-    />
-  )
+  return <RoundedImage width={width} height={200} src="/images/theme.png" alt={nft?.name} as={as} {...props} />
 }
 
 export default NFTMedia

@@ -35,7 +35,7 @@ const Collections: React.FC<React.PropsWithChildren<{ title: string; testId: str
               key={collection.address}
               bgSrc="/images/theme.png"
               avatarSrc="/images/avatar.png"
-              collectionName={collection.name}
+              collectionName={collection.name.replace('Pancake', 'Chained Rhythm')}
               url={`${nftsBaseUrl}/collections/${collection.address}`}
             >
               <Flex alignItems="center">

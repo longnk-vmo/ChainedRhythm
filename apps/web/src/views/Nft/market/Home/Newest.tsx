@@ -64,7 +64,7 @@ const Newest: React.FC<React.PropsWithChildren> = () => {
           gridColumnGap="16px"
           gridTemplateColumns={['1fr', 'repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
         >
-          {nfts.map((nft) => {
+          {nfts?.slice(0, 8)?.map((nft) => {
             const isPBCollection = isAddress(nft.collectionAddress) === pancakeBunniesAddress
             const currentAskPrice =
               !isPBCollection && nft.marketData?.isTradable ? parseFloat(nft.marketData?.currentAskPrice) : undefined

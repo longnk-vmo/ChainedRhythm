@@ -119,11 +119,6 @@ const IndividualPancakeBunnyPageBase: React.FC<React.PropsWithChildren<Individua
       />
       <TwoColumnsContainer flexDirection={['column', 'column', 'column', 'row']}>
         <Flex flexDirection="column" width="100%">
-          <ManageNftsCard
-            collection={collection}
-            tokenId={bunnyId}
-            lowestPrice={cheapestBunny?.marketData?.currentAskPrice}
-          />
           <PropertiesCard properties={properties} rarity={propertyRarity} />
           <DetailsCard
             contractAddress={pancakeBunniesAddress}

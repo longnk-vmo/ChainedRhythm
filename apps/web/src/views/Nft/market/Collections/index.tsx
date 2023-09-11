@@ -289,8 +289,8 @@ const Collectible = () => {
                             <Td style={{ cursor: 'pointer', minWidth: '200px' }}>
                               <NextLinkFromReactRouter to={`${nftsBaseUrl}/collections/${collection.address}`}>
                                 <Flex alignItems="center">
-                                  <ProfileAvatar src={collection.avatar} width={48} height={48} mr="16px" />
-                                  {collection.name}
+                                  <ProfileAvatar src="/images/avatar.png" width={48} height={48} mr="16px" />
+                                  {collection.name.replace('Pancake', 'Chained Rhythm')}
                                 </Flex>
                               </NextLinkFromReactRouter>
                             </Td>
@@ -334,9 +334,9 @@ const Collectible = () => {
                   return (
                     <CollectionCardWithVolume
                       key={collection.address}
-                      bgSrc={collection.banner.small}
-                      avatarSrc={collection.avatar}
-                      collectionName={collection.name}
+                      bgSrc="/images/theme.png"
+                      avatarSrc="/images/avatar.png"
+                      collectionName={collection.name.replace('Pancake', 'Chained Rhythm')}
                       url={`${nftsBaseUrl}/collections/${collection.address}`}
                       volume={collection.totalVolumeBNB ? parseFloat(collection.totalVolumeBNB) : 0}
                     />
