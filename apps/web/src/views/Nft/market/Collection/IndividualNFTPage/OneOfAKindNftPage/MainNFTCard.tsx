@@ -80,7 +80,8 @@ const MainNFTCard: React.FC<React.PropsWithChildren<MainNFTCardProps>> = ({
               </Text>
               {currentAskPriceAsNumber > 0 ? (
                 <Flex alignItems="center" mt="8px">
-                  <BinanceIcon width={18} height={18} mr="4px" />
+                  {/* <BinanceIcon width={18} height={18} mr="4px" /> */}
+                  <img src="/images/coin.png" width="16px" alt="icon" style={{ marginLeft: 4, marginRight: 4 }} />
                   <Text fontSize="24px" bold mr="4px">
                     {formatNumber(currentAskPriceAsNumber, 0, 5)}
                   </Text>
@@ -113,7 +114,7 @@ const MainNFTCard: React.FC<React.PropsWithChildren<MainNFTCardProps>> = ({
                   mt="24px"
                   onClick={onPresentBuyModal}
                 >
-                  {t('Buy')}
+                  Collect Now
                 </Button>
               )}
             </Box>

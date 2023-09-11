@@ -9,7 +9,8 @@ const ActivityPrice = ({ bnbBusdPrice, price }) => {
       {price ? (
         <>
           <Flex justifySelf="flex-start" alignItems="center">
-            <BinanceIcon width="12px" height="12px" mr="4px" />
+            {/* <BinanceIcon width="12px" height="12px" mr="4px" /> */}
+            <img src="/images/coin.png" width="16px" alt="icon" style={{ marginLeft: 4, marginRight: 4 }} />
             <Text maxWidth="80px" bold>
               {price.toLocaleString(undefined, {
                 minimumFractionDigits: 0,

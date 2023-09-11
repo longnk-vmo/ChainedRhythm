@@ -46,8 +46,10 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" />
+      {/* <LogoIcon className="mobile-icon" /> */}
+      <img src="/images/logo.png" width={30} alt="logo" />
+      {/* <img src="/images/logo.png" className="desktop-icon" alt="logo" /> */}
+      {/* <LogoWithTextIcon className="desktop-icon" /> */}
     </>
   );
 

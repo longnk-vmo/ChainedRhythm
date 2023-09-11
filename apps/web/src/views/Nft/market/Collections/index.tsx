@@ -35,7 +35,7 @@ import PageLoader from 'components/Loader/PageLoader'
 import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
 import CollectionCardWithVolume from '../components/CollectibleCard/CollectionCardWithVolume'
 
-export const ITEMS_PER_PAGE = 9
+export const ITEMS_PER_PAGE = 6
 
 const SORT_FIELD = {
   createdAt: 'createdAt',

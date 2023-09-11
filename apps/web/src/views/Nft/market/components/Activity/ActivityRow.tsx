@@ -86,11 +86,11 @@ const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
               <Skeleton height={[138, null, 64]} width={[80, null, 249]} />
             ) : (
               <>
-                <Box width={64} height={64} mr={[0, null, '16px']} mb={['8px', null, 0]}>
+                {/* <Box width={64} height={64} mr={[0, null, '16px']} mb={['8px', null, 0]}>
                   <NextLinkFromReactRouter to={`${nftsBaseUrl}/collections/${nft.collectionAddress}/${tokenId}`}>
                     <NFTMedia nft={nft} width={64} height={64} />
                   </NextLinkFromReactRouter>
-                </Box>
+                </Box> */}
                 <Flex flexDirection="column">
                   <Text
                     as={NextLinkFromReactRouter}

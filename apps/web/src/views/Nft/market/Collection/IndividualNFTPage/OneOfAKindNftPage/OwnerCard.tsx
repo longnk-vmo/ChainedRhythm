@@ -84,7 +84,7 @@ const OwnerCard: React.FC<React.PropsWithChildren<OwnerCardProps>> = ({
               {nft.marketData?.isTradable ? (
                 <>
                   <Flex justifySelf="flex-start" alignItems="center" width="max-content">
-                    <BinanceIcon width="24px" height="24px" mr="8px" />
+                    <img src="/images/coin.png" width="16px" alt="icon" style={{ marginLeft: 4, marginRight: 4 }} />
                     <Text bold>{formatNumber(parseFloat(nft?.marketData?.currentAskPrice), 0, 5)}</Text>
                   </Flex>
                   {bnbBusdPrice ? (
@@ -125,7 +125,7 @@ const OwnerCard: React.FC<React.PropsWithChildren<OwnerCardProps>> = ({
                   maxWidth="128px"
                   onClick={onPresentBuyModal}
                 >
-                  {t('Buy')}
+                  Collect
                 </Button>
               )}
             </ButtonContainer>

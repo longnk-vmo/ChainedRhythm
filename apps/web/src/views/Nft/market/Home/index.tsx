@@ -1,15 +1,5 @@
 import styled from 'styled-components'
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  LinkExternal,
-  PageHeader,
-  NextLinkFromReactRouter,
-  PageSection,
-} from '@pancakeswap/uikit'
-import { useAccount } from 'wagmi'
+import { Box, Flex, Heading, LinkExternal, PageHeader, PageSection } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import SectionsWithFoldableText from 'components/FoldableSection/SectionsWithFoldableText'
 import { useGetCollections } from 'state/nftMarket/hooks'
@@ -17,7 +7,6 @@ import { FetchStatus } from 'config/constants/types'
 import PageLoader from 'components/Loader/PageLoader'
 import useTheme from 'hooks/useTheme'
 import orderBy from 'lodash/orderBy'
-import SearchBar from '../components/SearchBar'
 import Collections from './Collections'
 import Newest from './Newest'
 import config from './config'
@@ -33,8 +22,9 @@ const StyledPageHeader = styled(PageHeader)`
 
 const StyledHeaderInner = styled(Flex)`
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  text-align: right;
   & div:nth-child(1) {
     order: 1;
   }
@@ -58,7 +48,6 @@ const StyledHeaderInner = styled(Flex)`
 
 const Home = () => {
   const { t } = useTranslation()
-  const { address: account } = useAccount()
   const { theme } = useTheme()
   const { data: collections, status } = useGetCollections()
 
@@ -80,18 +69,12 @@ const Home = () => {
         <StyledHeaderInner>
           <div>
             <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('NFT Marketplace')}
+              {t('Music Instrument Marketplace')}
             </Heading>
             <Heading scale="lg" color="text">
-              {t('Buy and Sell NFTs on BNB Smart Chain')}
+              {t('Enrich your unique musical instrument collections with Klaytn Smart Chain')}
             </Heading>
-            {account && (
-              <Button as={NextLinkFromReactRouter} to={`/profile/${account.toLowerCase()}`} mt="32px">
-                {t('Manage/Sell')}
-              </Button>
-            )}
           </div>
-          <SearchBar />
         </StyledHeaderInner>
       </StyledPageHeader>
       {status !== FetchStatus.Fetched ? (
@@ -106,7 +89,7 @@ const Home = () => {
         >
           <Collections
             key="newest-collections"
-            title={t('Newest Collections')}
+            title={t('Trending collections')}
             testId="nfts-newest-collections"
             collections={newestCollections}
           />

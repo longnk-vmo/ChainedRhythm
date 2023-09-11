@@ -11,7 +11,6 @@ const Collections: React.FC<React.PropsWithChildren<{ title: string; testId: str
   collections,
 }) => {
   const { t } = useTranslation()
-
   return (
     <>
       <Flex alignItems="center" justifyContent="space-between" mb="32px">
@@ -34,8 +33,8 @@ const Collections: React.FC<React.PropsWithChildren<{ title: string; testId: str
           return (
             <CollectionCard
               key={collection.address}
-              bgSrc={collection.banner.small}
-              avatarSrc={collection.avatar}
+              bgSrc="/images/theme.png"
+              avatarSrc="/images/avatar.png"
               collectionName={collection.name}
               url={`${nftsBaseUrl}/collections/${collection.address}`}
             >
